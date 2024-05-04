@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .profile-container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .profile-info {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .profile-info img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .cart-history {
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .status-in-progress {
+      color: #17a2b8;
+    }
+
+    .status-shipped {
+      color: #28a745;
+    }
+
+    .status-delivered {
+      color: #007bff;
+    }
+
+    .status-canceled {
+      color: #dc3545;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>User Profile</h1>
+  </header>
+
+  <div class="profile-container">
+    <div class="profile-info">
+      <img src="https://via.placeholder.com/100" alt="Profile Picture">
+      <h2>User Information</h2>
+      <p>Username: JohnDoe</p>
+      <p>Email: john.doe@example.com</p>
+      <!-- Add more user information as needed -->
+    </div>
+
+    <div class="cart-history">
+      <h2>Shopping Cart History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample cart history data, replace with actual data from the backend -->
+          <tr>
+            <td>Product A</td>
+            <td>$20.00</td>
+            <td>2</td>
+            <td>$40.00</td>
+            <td class="status-in-progress">In Progress</td>
+            <td>2024-01-17</td>
+          </tr>
+          <tr>
+            <td>Product B</td>
+            <td>$15.00</td>
+            <td>1</td>
+            <td>$15.00</td>
+            <td class="status-shipped">Shipped</td>
+            <td>2024-01-16</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

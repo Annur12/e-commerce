@@ -1,0 +1,30 @@
+<?php
+session_start();
+include_once 'connection/connect.php';
+
+// Function to get the updated Order Summary data
+function getOrderSummary($userId, $conn)
+{
+    $cartCountQuery = "SELECT SUM(quantity) AS totalItems, SUM(price * quantity) AS totalPrice FROM cart JOIN products ON cart.product_id = products.product_id WHERE user_id = $userId";
+    $cartCountResult = mysqli_query($conn, $cartCountQuery);
+    $cartCountRow = mysqli_fetch_assoc($cartCountResult);
+
+    return array(
+        'newTotalItems' => $cartCountRow['totalItems'],
+        'newTotalPrice' => $cartCountRow['totalPrice']
+    );
+}
+
+$response = array('success' => false, 'message' => 'Failed to fetch updated Order Summary');
+
+if (isset($_SESSION['user_id'])) {
+    $userId = $_SESSION['user_id'];
+    $orderSummary = getOrderSummary($userId, $conn);
+
+    if ($orderSummary) {
+        $response = array('success' => true) + $orderSummary;
+    }
+}
+
+echo json_encode($response);
+?>
